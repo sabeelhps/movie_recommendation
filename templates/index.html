@@ -1,0 +1,43 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="static/bootstrap.css">
+        <title>Movies Recommendations System</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <header class="jumbotron"><h3> Most Recommended Movies for <i>{{movie_name}}</i></h3></header>
+            <!-- <h1></i> </h1> -->
+
+            {% if movie_list %}
+                
+                <ol>
+                    {% for movie in movie_list %}
+                        <li>{{movie[0]}}</li>
+                    {%endfor%}
+                </ol>
+                
+    
+            {%endif%}
+    
+    
+            <form action="/submit" method="POST">
+                
+                <input type="text" name="movie_name" placeholder="moviename">
+                <button class="btn btn-large btn-primary">Submit</button>
+               
+            
+            </form>
+            
+    
+
+
+        </div>
+
+      
+        
+    </body>
+    </html>
